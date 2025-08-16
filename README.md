@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # IWDA Buy-Signal Visualizer
 
 Visualize potential **buy signals** on the iShares Core MSCI World UCITS ETF (IWDA.AS) using a confluence of:
@@ -116,10 +115,6 @@ MIT (or your preferred license).
 ## 🙏 Acknowledgments
 - Price data from **Yahoo Finance** via the `yfinance` library.
 - Indicators and plotting with `pandas` and `matplotlib`.
-=======
-# iwda-rsi-bollinger-drawdown-signal
-Python trading signal generator for IWDA ETF using RSI, Bollinger Bands, and drawdown filters. Generates buy signals when RSI &lt; 30, price is below lower Bollinger Band, and drawdown exceeds 20%. Includes historical visualization and was successfully used for a €4,000 discretionary trade.
->>>>>>> 5f1f9c45424953cd27072b2ea33fe77722789332
 
 ## Demo
 <img src="images/iwda_chart.png" width="700">
