@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import yfinance as yf
@@ -11,6 +12,12 @@ RSI_WINDOW = 14
 BB_WINDOW = 20
 BB_STD = 2
 DRAWDOWN_THRESHOLD = -0.20  # -20%
+
+# Output paths
+IMG_DIR = "images"
+IMG_PATH = os.path.join(IMG_DIR, "iwda_chart.png")
+CSV_PATH = os.path.join(IMG_DIR, "buy_signals_tail10.csv")
+os.makedirs(IMG_DIR, exist_ok=True)
 
 # -----------------------
 # Download data
@@ -62,7 +69,7 @@ data["Buy_Signal"] = (
 ).astype(int)
 
 # -----------------------
-# Plot
+# Plot (and SAVE to images/iwda_chart.png)
 # -----------------------
 plt.figure(figsize=(14, 6))
 plt.plot(data.index, data["Price"], label="Price")
@@ -77,7 +84,8 @@ plt.scatter(
     s=100,
     color="green",       # Green marker
     edgecolor="black",   # Black outline
-    label="Buy Signal"
+    label="Buy Signal",
+    zorder=3
 )
 
 plt.title("IWDA Price with RSI + Bollinger + Drawdown Buy Signals")
@@ -86,7 +94,11 @@ plt.ylabel("Price (€)")
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
-plt.show()
+
+# Save instead of only showing
+plt.savefig(IMG_PATH, dpi=300, bbox_inches="tight")
+plt.close()
+print(f"\nSaved chart: {IMG_PATH}")
 
 # -----------------------
 # Output last signals
@@ -97,6 +109,6 @@ signals = data.loc[data["Buy_Signal"] == 1, cols].tail(10)
 print("\nLast 10 buy signals:")
 print(signals.to_string())
 
-# Also export to CSV for convenience
-signals.to_csv("buy_signals_tail10.csv")
-print("\nSaved: buy_signals_tail10.csv")
+# Also export to CSV (under images/ for easy README linking)
+signals.to_csv(CSV_PATH)
+print(f"\nSaved CSV: {CSV_PATH}")

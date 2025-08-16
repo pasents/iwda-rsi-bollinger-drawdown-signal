@@ -120,3 +120,6 @@ MIT (or your preferred license).
 # iwda-rsi-bollinger-drawdown-signal
 Python trading signal generator for IWDA ETF using RSI, Bollinger Bands, and drawdown filters. Generates buy signals when RSI &lt; 30, price is below lower Bollinger Band, and drawdown exceeds 20%. Includes historical visualization and was successfully used for a €4,000 discretionary trade.
 >>>>>>> 5f1f9c45424953cd27072b2ea33fe77722789332
+
+## Demo
+<img src="images/iwda_chart.png" width="700">
