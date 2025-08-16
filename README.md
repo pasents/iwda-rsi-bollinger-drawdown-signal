@@ -111,4 +111,8 @@ MIT (or your preferred license).
 ---
 
 ## Demo
+
+---
+
 <img src="images/iwda_chart.png" width="700">
+---
