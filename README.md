@@ -108,7 +108,6 @@ MIT (or your preferred license).
 - Price data from **Yahoo Finance** via the `yfinance` library.
 - Indicators and plotting with `pandas` and `matplotlib`.
 
----
 
 ## Demo
 
