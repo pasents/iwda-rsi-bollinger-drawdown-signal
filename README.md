@@ -99,14 +99,6 @@ DRAWDOWN_THRESHOLD = -0.20  # -20%
 
 ---
 
-## 📸 Screenshot
-If you want to keep a screenshot in the repo, save it under `docs/screenshot.png` and reference it like:
-```md
-![IWDA Buy Signals](docs/screenshot.png)
-```
-
----
-
 ## 📄 License
 MIT (or your preferred license).
 
@@ -115,6 +107,8 @@ MIT (or your preferred license).
 ## 🙏 Acknowledgments
 - Price data from **Yahoo Finance** via the `yfinance` library.
 - Indicators and plotting with `pandas` and `matplotlib`.
+
+---
 
 ## Demo
 <img src="images/iwda_chart.png" width="700">
